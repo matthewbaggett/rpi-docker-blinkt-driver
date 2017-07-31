@@ -19,10 +19,14 @@ while True:
         dict = r.hgetall('blinkt_light_state:' + str(x));
         if dict['mode'] == "flashing":
             if iter % 2 == 0:
+                #print "Flashing ON " + str(x) + " is (" + str(dict['r']) + "," + str(dict['g']) + "," + str(dict['b']) + "," +  str(dict['bri']) + ")"
                 blinkt.set_pixel(x, float(dict['r']), float(dict['g']), float(dict['b']), float(dict['bri']))
             else:
+                #print "Flashing OFF " + str(x) + " is (" + str(dict['r']) + "," + str(dict['g']) + "," + str(dict['b']) + "," +  str(dict['bri']) + ")"
                 blinkt.set_pixel(x, 0,0,0,0)
         else:
+            #print "Constant " + str(x) + " is (" + str(dict['r']) + "," + str(dict['g']) + "," + str(dict['b']) + ")"
             blinkt.set_pixel(x, float(dict['r']), float(dict['g']), float(dict['b']), float(dict['bri']))
     blinkt.show()
-    time.sleep(0.5)
+    #print ""
+    time.sleep(0.3)
