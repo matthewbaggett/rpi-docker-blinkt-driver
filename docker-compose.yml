@@ -13,6 +13,7 @@ services:
       - redis
 
   blinkt:
+    image: gone/rpi-docker-blinkt
     build: ./
     environment:
      - REDIS_HOST=redis
