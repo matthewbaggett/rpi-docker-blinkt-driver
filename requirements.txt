@@ -1,5 +1,5 @@
 blinkt==0.1.0
-redis==2.10.5
+redis==4.4.4
 RPi.GPIO==0.6.3
 pycurl==7.43.0
 python-apt==1.1.0b1
